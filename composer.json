@@ -1,0 +1,7 @@
+{
+    "require": {
+        "mtdowling/jmespath.php": "^2.7",
+        "league/commonmark": "^2.4",
+        "cocur/slugify": "^4.5"
+    }
+}

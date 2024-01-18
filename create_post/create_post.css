@@ -1,0 +1,54 @@
+.form {
+    display: flex;
+    flex-flow: column;
+    gap: 2rem;
+    font-size: 1rem;
+}
+
+.form label {
+    display: flex;
+    flex-flow: column;
+    justify-content: flex-end;
+}
+
+.form input,
+.form textarea {
+    width: 100%;
+    padding: 0.5rem 1rem;
+    margin-top: 0.5rem;
+    font-size: 1rem;
+
+}
+
+.form button {
+    margin-top: 3rem;
+    padding: 1rem;
+    max-width: 15rem;
+    font-weight: bold;
+    font-size: 1rem;
+
+}
+
+#title {
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+
+#shortDesc {
+    min-height: 5rem;
+    font-size: 1rem;
+}
+
+#content {
+    min-height: 15rem;
+}
+
+#imagePreview {
+    height: 15rem;
+    object-fit: contain;
+}
+
+.imageInput {
+    align-items: flex-start;
+    cursor: pointer;
+}

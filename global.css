@@ -1,0 +1,100 @@
+.cta {
+    font-size: 1.25rem;
+    font-weight: bold;
+}
+
+.headerWrapper {
+    width: 90%;
+    max-width: 1920px;
+    margin: auto;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+header a.header_logo {
+    font-size: 1.5rem;
+    font-weight: bold;
+    font-family: monospace;
+    text-decoration: red wavy underline;
+    ;
+    color: blue;
+}
+
+.header_links .active {
+    font-weight: bold;
+}
+
+.header_links {
+    display: flex;
+    gap: 2rem;
+    align-items: center;
+}
+
+.header_links a {
+    text-decoration: underline;
+    font-size: 1rem;
+}
+
+.header_search form {
+    display: flex;
+    margin-top: 0.5rem;
+
+}
+
+.header_search input {
+
+
+    border: 1px solid black;
+    border-right: 0;
+    border-radius: 5rem 0 0 5rem;
+    padding: 0.5rem 1rem;
+
+}
+
+.header_search button {
+    border-radius: 0;
+    border: 1px solid black;
+    border-left: 0;
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    border-radius: 0rem 5rem 5rem 0;
+    padding: 0.5rem 1rem;
+}
+
+.header_search_image {
+    display: block;
+    width: 24px;
+    height: 24px;
+    background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAAAXNSR0IArs4c6QAAARRJREFUSEvFldsNwjAMRW83gU1gEmASYBJgksIksAn0SDEKIalT2or8tFJjH/v60UYzn2Zm//orYCFpI2kliXfOVdIlPKuSL2Ww76wPBQ+PDniWdKwh5ACxcyA3STjlkJGBgew8SApAjjYYrQtSINc9QAEgW/GkgFNnuA1R9klgWeKcQKoBREaEy0iWnHGcBXerAc9w02vfnwHoTx1K+lukViuKPygDq4HXIVYD797XJNd0SNxpXq2yq8Kis4FiDugWm2ybA74jpc1IttC5YqaOcoY45Z4L6esWHJANT2SxjNhFHBrChXjt2NfiOHchYwDAXchYgAuZApBCPvbTVACDMKgsyfeGnRJQPQfeP2TQ99kzeAF1E0YZLf7WWgAAAABJRU5ErkJggg==');
+}
+
+.pageWrapper {
+    width: 90%;
+    max-width: 1920px;
+    margin: auto;
+    min-height: 100vh;
+    margin-top: 6rem;
+    margin-bottom: 6rem;
+}
+
+.pageWrapper-narrow {
+    width: 90%;
+    max-width: 1000px;
+    margin: auto;
+    min-height: 100vh;
+    margin-top: 6rem;
+    margin-bottom: 6rem;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+a {
+    color: black;
+}

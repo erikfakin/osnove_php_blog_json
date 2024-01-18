@@ -37,7 +37,7 @@ $posts = getAllPosts($query);
         <p>Poredani po datumu kreiranja.</p>
         <div class="postsWrapper">
             <?php
-            if (!empty($posts)) {
+            if (!empty($posts) || $query != "") {
                 foreach ($posts as $post) {
                     echo getPostCardHtml($post);
                 }

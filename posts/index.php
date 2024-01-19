@@ -18,7 +18,7 @@ $posts = getAllPosts($query);
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="/global.css">
-    <link rel="stylesheet" href="posts.css">
+    <link rel="stylesheet" href="/posts/posts.css">
     <title>Postovi</title>
 </head>
 

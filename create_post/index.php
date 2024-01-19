@@ -26,7 +26,7 @@ require $_SERVER['DOCUMENT_ROOT'] . '/layout/header.php';
                 Naslov:
                 <input type="text" name="title" id="title" required />
             </label>
-            <label class="imageInput">
+            <label class="image-input">
                 <img id="imagePreview" alt="image preview" src="/images/placeholder.jpg" />
                 <input type="file" name="featuredImg" id="featuredImg" accept="image/*" onchange="document.getElementById('imagePreview').src = window.URL.createObjectURL(this.files[0])">
             </label>

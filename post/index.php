@@ -1,7 +1,8 @@
 <?php
 
 require $_SERVER['DOCUMENT_ROOT'] . '/vendor/autoload.php';
-include_once $_SERVER['DOCUMENT_ROOT'] . '/layout/header.php';
+require $_SERVER['DOCUMENT_ROOT'] . '/utils/postsUtils.php';
+require $_SERVER['DOCUMENT_ROOT'] . '/layout/header.php';
 
 
 use League\CommonMark\GithubFlavoredMarkdownConverter;
@@ -10,20 +11,11 @@ $converter = new GithubFlavoredMarkdownConverter();
 
 
 if (isset($_GET["id"])) {
-    $postId = $_GET["id"];
-    $postsJSON = file_get_contents("../posts.json");
-    $posts = json_decode($postsJSON, true);
-
-    $queryResult = JmesPath\search(
-        "posts[?id=='" . $postId . "']",
-        $posts
-    );
-    if (empty($queryResult)) {
-
+    $post = getPostById($_GET["id"]);
+    if (empty($post)) {
         header('Location: /post/404.php');
         die();
     }
-    $post = $queryResult[0];
 } else {
     header('Location: /posts');
 }
@@ -43,30 +35,30 @@ if (isset($_GET["id"])) {
 </head>
 
 <body>
-    <div class="headerWrapper">
+    <div class="header-wrapper">
         <?php echo getHeader(); ?>
     </div>
-    <div class="pageWrapper-narrow post">
+    <div class="page-wrapper--narrow post">
 
         <h1>
             <?php echo $post["title"]; ?>
         </h1>
-        <a class="editWrapper" href="/update_post?id=<?php echo $post["id"]; ?>">
+        <a class="edit-wrapper" href="/update_post?id=<?php echo $post["id"]; ?>">
             <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAAAXNSR0IArs4c6QAAAMVJREFUSEvVlNEVgjAMRR+buIk6ipPIKG6im+gmajgpp5bQpEn7IT8cOHAveSSZMPiYBvPxF4LrN4UZwAvAmc9rMNEK7gBOWcwbSURQwpPnwZUs117BHjxJVq5HkOAUx0HowhuAy8ZkbNccTpAj/2AxntaISjhlTRU8mf6TfWsFLri1AjfcIgjBNUEYXhN0ge8JusElQVe4JHhz/9JWNPW5NqDlqkgCuq8OkQavVZC/K06oBW4RhODaHFg/svqcZ103iYcLPq33QxnDeB8ZAAAAAElFTkSuQmCC">
             Uredi
         </a>
-        <form class="deleteForm" action="/actions/deletePost.php" method="post">
+        <form class="delete-form" action="/actions/deletePost.php" method="post">
             <input type="hidden" name="postId" value="<?php echo $post["id"]; ?>">
-            <label class="deleteWrapper">
+            <label class="delete-wrapper">
                 <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAAAXNSR0IArs4c6QAAAMVJREFUSEvVlNEVgjAMRR+buIk6ipPIKG6im+gmajgpp5bQpEn7IT8cOHAveSSZMPiYBvPxF4LrN4UZwAvAmc9rMNEK7gBOWcwbSURQwpPnwZUs117BHjxJVq5HkOAUx0HowhuAy8ZkbNccTpAj/2AxntaISjhlTRU8mf6TfWsFLri1AjfcIgjBNUEYXhN0ge8JusElQVe4JHhz/9JWNPW5NqDlqkgCuq8OkQavVZC/K06oBW4RhODaHFg/svqcZ103iYcLPq33QxnDeB8ZAAAAAElFTkSuQmCC">
                 Obriši
                 <input id="deleteButton" type="submit" onclick="return confirm('Želiš li stvarno obrisati ovaj post?');">
             </label>
         </form>
 
-        <img src="<?php echo $post["featuredImg"]; ?>" class="featuredImage" />
-        <p class='postDate'><?php echo date('d.m.Y.', $post["createdAt"]); ?></p>
-        <div class="postContent">
+        <img src="<?php echo $post["featuredImg"]; ?>" class="featured-image" />
+        <p class='post-date'><?php echo date('d.m.Y.', $post["createdAt"]); ?></p>
+        <div class="post-content">
 
             <?php echo $converter->convert($post["content"]); ?>
         </div>

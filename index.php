@@ -1,8 +1,8 @@
 <?php
 
 require $_SERVER['DOCUMENT_ROOT'] . '/vendor/autoload.php';
-include_once $_SERVER['DOCUMENT_ROOT'] . '/layout/header.php';
-include_once $_SERVER['DOCUMENT_ROOT'] . '/utils/postsUtils.php';
+require $_SERVER['DOCUMENT_ROOT'] . '/layout/header.php';
+require $_SERVER['DOCUMENT_ROOT'] . '/utils/postsUtils.php';
 
 ?>
 
@@ -18,15 +18,15 @@ include_once $_SERVER['DOCUMENT_ROOT'] . '/utils/postsUtils.php';
 </head>
 
 <body>
-    <div class="headerWrapper">
+    <div class="header-wrapper">
         <?php echo getHeader(); ?>
     </div>
-    <div class="pageWrapper">
+    <div class="page-wrapper">
         <h1>Blog JSON</h1>
         <p>Blog koji koristi JSON datoteku kao database.</p>
-        <div class="latestPosts">
+        <div class="latest-posts">
             <h2>Najnoviji postovi</h2>
-            <div class="latestPosts_posts">
+            <div class="latest-posts__posts">
                 <?php
                 $posts = getLatestPosts(4);
 

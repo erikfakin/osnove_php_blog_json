@@ -7,8 +7,8 @@ if ($_SERVER["REQUEST_METHOD"] != "POST") {
 }
 
 require $_SERVER['DOCUMENT_ROOT'] . '/vendor/autoload.php';
-include_once $_SERVER['DOCUMENT_ROOT'] . '/layout/header.php';
-include_once $_SERVER['DOCUMENT_ROOT'] . '/utils/postsUtils.php';
+require $_SERVER['DOCUMENT_ROOT'] . '/layout/header.php';
+require $_SERVER['DOCUMENT_ROOT'] . '/utils/postsUtils.php';
 
 // Checks if ww have the required data to make the new post
 if (!empty($_POST["postId"])) {
@@ -34,10 +34,10 @@ $deletedId = deletePost($postId);
 </head>
 
 <body>
-    <div class="headerWrapper">
+    <div class="header-wrapper">
         <?php echo getHeader(); ?>
     </div>
-    <div class="pageWrapper">
+    <div class="page-wrapper">
         <h1>
             <?php if ($deletedId !== "") {
                 echo "Uspješno ste obrisali post.";

@@ -1,6 +1,6 @@
 <?php
 require $_SERVER['DOCUMENT_ROOT'] . '/vendor/autoload.php';
-include_once $_SERVER['DOCUMENT_ROOT'] . '/layout/header.php';
+require $_SERVER['DOCUMENT_ROOT'] . '/layout/header.php';
 
 ?>
 
@@ -16,10 +16,10 @@ include_once $_SERVER['DOCUMENT_ROOT'] . '/layout/header.php';
 </head>
 
 <body>
-    <div class="headerWrapper">
+    <div class="header-wrapper">
         <?php echo getHeader(); ?>
     </div>
-    <div class="pageWrapper-narrow">
+    <div class="page-wrapper--narrow">
         <h1>Dodaj novi post</h1>
         <form class="form" action="/actions/createPost.php" method="post" enctype="multipart/form-data">
             <label>

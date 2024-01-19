@@ -1,7 +1,7 @@
 <?php
 require $_SERVER['DOCUMENT_ROOT'] . '/vendor/autoload.php';
-include_once $_SERVER['DOCUMENT_ROOT'] . '/layout/header.php';
-include_once $_SERVER['DOCUMENT_ROOT'] . '/utils/postsUtils.php';
+require $_SERVER['DOCUMENT_ROOT'] . '/layout/header.php';
+require $_SERVER['DOCUMENT_ROOT'] . '/utils/postsUtils.php';
 
 $query = "";
 if (!empty($_GET["search"])) {
@@ -23,10 +23,10 @@ $posts = getAllPosts($query);
 </head>
 
 <body>
-    <div class="headerWrapper">
+    <div class="header-wrapper">
         <?php echo getHeader(); ?>
     </div>
-    <div class="pageWrapper">
+    <div class="page-wrapper">
         <h1><?php
             if (!empty($query)) {
                 echo "Svi rezultati za upit: " . $query;
@@ -35,7 +35,7 @@ $posts = getAllPosts($query);
             }
             ?></h1>
         <p>Poredani po datumu kreiranja.</p>
-        <div class="postsWrapper">
+        <div class="posts-wrapper">
             <?php
             if (!empty($posts) || $query != "") {
                 foreach ($posts as $post) {

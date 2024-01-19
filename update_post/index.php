@@ -5,8 +5,8 @@ if (empty($_GET["id"])) {
 }
 
 require $_SERVER['DOCUMENT_ROOT'] . '/vendor/autoload.php';
-include_once $_SERVER['DOCUMENT_ROOT'] . '/layout/header.php';
-include_once $_SERVER['DOCUMENT_ROOT'] . '/utils/postsUtils.php';
+require $_SERVER['DOCUMENT_ROOT'] . '/layout/header.php';
+require $_SERVER['DOCUMENT_ROOT'] . '/utils/postsUtils.php';
 
 
 
@@ -36,10 +36,10 @@ if (empty($post)) {
 </head>
 
 <body>
-    <div class="headerWrapper">
+    <div class="header-wrapper">
         <?php echo getHeader(); ?>
     </div>
-    <div class="pageWrapper-narrow">
+    <div class="page-wrapper--narrow">
         <h1>Uredi post</h1>
         <form class="form" action="/actions/updatePost.php" method="post" enctype="multipart/form-data">
             <input name="postId" type="hidden" value="<?php echo $post["id"]; ?>" />
@@ -47,7 +47,7 @@ if (empty($post)) {
                 Naslov:
                 <input value="<?php echo $post["title"]; ?>" type="text" name="title" id="title" required />
             </label>
-            <label class="imageInput">
+            <label class="image-input">
                 <img id="imagePreview" alt="image preview" src="<?php echo $post["featuredImg"]; ?>" />
                 <input type="file" name="featuredImg" id="featuredImg" accept="image/*" onchange="document.getElementById('imagePreview').src = window.URL.createObjectURL(this.files[0])">
             </label>

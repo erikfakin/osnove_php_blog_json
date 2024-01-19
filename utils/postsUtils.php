@@ -1,7 +1,7 @@
 <?php
 require $_SERVER['DOCUMENT_ROOT'] . '/vendor/autoload.php';
 
-define("JSON_LOCATION", $_SERVER['DOCUMENT_ROOT'] . "/posts.json");
+define("JSON_LOCATION", $_SERVER['DOCUMENT_ROOT'] . "/db.json");
 
 
 function getAllPosts(string $query = ""): array
@@ -49,7 +49,7 @@ function getPostById(string $postId): array
     return [];
 }
 
-function createNewPost(array $newPost): string
+function createPost(array $newPost): string
 {
     $dbJSON = file_get_contents(JSON_LOCATION);
     $db = json_decode($dbJSON, true);
@@ -107,11 +107,11 @@ function updatePost(array $postData)
 
 function getPostCardHtml(array $postData): string
 {
-    $html = "<a class='postCard' href='/post?id=" . $postData["id"] . "'>";
-    $html .= "<img class='postCard_image' src='" . $postData["featuredImg"] . "' />";
-    $html .= "<p class='postCard_date'>" . date('d.m.Y.', $postData["createdAt"]) . "</p>";
-    $html .= "<h3 class='postCard_title'>" . $postData["title"] . "</h3>";
-    $html .= "<p class='postCard_desc'>" . $postData["shortDesc"] . "</p>";
+    $html = "<a class='post-card' href='/post?id=" . $postData["id"] . "'>";
+    $html .= "<img class='post-card__image' src='" . $postData["featuredImg"] . "' />";
+    $html .= "<p class='post-card__date'>" . date('d.m.Y.', $postData["createdAt"]) . "</p>";
+    $html .= "<h3 class='post-card__title'>" . $postData["title"] . "</h3>";
+    $html .= "<p class='post-card__desc'>" . $postData["shortDesc"] . "</p>";
     $html .= "</a>";
     return $html;
 }

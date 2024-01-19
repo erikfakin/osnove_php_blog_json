@@ -48,7 +48,7 @@
     object-fit: contain;
 }
 
-.imageInput {
+.image-input {
     align-items: flex-start;
     cursor: pointer;
 }

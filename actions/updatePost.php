@@ -7,9 +7,9 @@ if ($_SERVER["REQUEST_METHOD"] != "POST") {
 }
 
 require $_SERVER['DOCUMENT_ROOT'] . '/vendor/autoload.php';
-include_once $_SERVER['DOCUMENT_ROOT'] . '/layout/header.php';
-include_once $_SERVER['DOCUMENT_ROOT'] . '/utils/postsUtils.php';
-include_once $_SERVER['DOCUMENT_ROOT'] . '/utils/uploadUtils.php';
+require $_SERVER['DOCUMENT_ROOT'] . '/layout/header.php';
+require $_SERVER['DOCUMENT_ROOT'] . '/utils/postsUtils.php';
+require $_SERVER['DOCUMENT_ROOT'] . '/utils/uploadUtils.php';
 
 
 // Checks if ww have the required data to make the new post
@@ -60,10 +60,10 @@ $updatedId = updatePost($post);
 </head>
 
 <body>
-    <div class="headerWrapper">
+    <div class="header-wrapper">
         <?php echo getHeader(); ?>
     </div>
-    <div class="pageWrapper">
+    <div class="page-wrapper">
         <h1>
             Uspješno ste uredili post.
         </h1>
